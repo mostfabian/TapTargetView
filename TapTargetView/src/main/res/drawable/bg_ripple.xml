@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:color="@color/colorDarkOverlay">
+    <item android:gravity="center" android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <corners android:radius="9dp"/>
+            <solid android:color="@color/colorDarkOverlay"/>
+        </shape>
+    </item>
+</ripple>

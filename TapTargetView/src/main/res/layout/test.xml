@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_level"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:tag="layout/activity_level_0">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="126dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ic_setting"
+            style="?attr/actionButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:padding="10dp"
+            android:scaleType="centerCrop"
+            android:tint="@color/colorPrimaryIconLight"
+            app:layout_constraintBottom_toBottomOf="@+id/lottie_gift"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_setting" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_gift"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:padding="5dp"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ic_setting"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="anims/gift_level.json"
+            app:lottie_loop="true" />
+
+        <ImageView
+            android:id="@+id/appbar_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/appbar_title"
+            app:layout_constraintEnd_toStartOf="@+id/appbar_title"
+            app:layout_constraintStart_toEndOf="@+id/ic_back"
+            app:layout_constraintTop_toTopOf="@+id/appbar_title"
+            app:srcCompat="@drawable/ic_level" />
+
+        <TextView
+            android:id="@+id/appbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/activity_level_title"
+            android:textColor="@color/colorPrimaryTextLight"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/lottie_gift"
+            app:layout_constraintEnd_toStartOf="@+id/ic_setting"
+            app:layout_constraintStart_toEndOf="@+id/appbar_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ic_back"
+            style="?attr/actionButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:padding="10dp"
+            android:scaleType="centerCrop"
+            android:tint="@color/colorPrimaryIconLight"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imgPocketNotification"
+            style="?attr/actionButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:tint="@color/colorWhite"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_back"
+            app:layout_constraintStart_toEndOf="@+id/ic_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_pocket"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/imgPointer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="8sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintCircle="@+id/imgPocketNotification"
+            app:layout_constraintCircleAngle="60"
+            app:layout_constraintCircleRadius="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/appbar_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/activity_level_subtitle"
+            android:textColor="@color/colorPrimaryTextLight"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lyt_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_default_background_top_rounded26"
+        app:layout_constraintBottom_toTopOf="@+id/lyt_payment_plans"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_placement_test"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_margin="16dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryTextLight"
+                    android:textSize="17sp"
+                    app:backgroundTint="@color/colorAccent"
+                    app:cornerRadius="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rv_list"
+                    app:layout_constraintStart_toStartOf="@+id/rv_list" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_discount"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="16dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="12dp"
+                    app:layout_constraintEnd_toEndOf="@+id/rv_list"
+                    app:layout_constraintStart_toStartOf="@+id/rv_list"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_placement_test">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/discount_code_banner_level" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/gl_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.02" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/gl_end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.75" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/img_close"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:paddingStart="22dp"
+                            android:paddingLeft="22dp"
+                            android:paddingTop="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="20dp"
+                            android:tint="@color/colorWhite"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_close_black_24dp"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:id="@+id/txt_discount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ØªØ®ÙÛŒÙ 40%"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="17sp"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_discount_desc"
+                            app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                            app:layout_constraintStart_toEndOf="@+id/txt_package_price" />
+
+                        <TextView
+                            android:id="@+id/txt_discount_desc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ù‡Ø¯ÛŒÙ‡ ÙˆÛŒÚ˜Ù‡ ÙˆØ§ÛŒØª Ø¨Ø±Ø¯"
+                            android:textColor="@color/colorOrange"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                            app:layout_constraintStart_toEndOf="@+id/txt_package_discount_price"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_discount" />
+
+                        <TextView
+                            android:id="@+id/txt_package_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="50000 ØªÙˆÙ…Ø§Ù†"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_package_discount_price"
+                            app:layout_constraintEnd_toStartOf="@+id/txt_discount"
+                            app:layout_constraintStart_toStartOf="@+id/gl_start" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:background="@color/colorWhite"
+                            app:layout_constraintBottom_toBottomOf="@+id/txt_package_price"
+                            app:layout_constraintEnd_toEndOf="@+id/txt_package_price"
+                            app:layout_constraintStart_toStartOf="@+id/txt_package_price"
+                            app:layout_constraintTop_toTopOf="@+id/txt_package_price" />
+
+                        <TextView
+                            android:id="@+id/txt_package_discount_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_discount"
+                            android:padding="3dp"
+                            android:text="400000 ØªÙˆÙ…Ø§Ù†"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/txt_discount_desc"
+                            app:layout_constraintStart_toEndOf="@+id/gl_start"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_package_price" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_list"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:padding="8dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_discount"
+                    app:layout_constraintWidth_percent="0.8" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progress_bar"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="anims/glow_loading.json"
+            app:lottie_loop="true" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lyt_payment_plans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="662dp"
+        app:layout_constraintTop_toTopOf="@+id/appbar">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/img_payment_plans"
+            app:layout_constraintDimensionRatio="108:18.3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/btn_payment_plans"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_ripple" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
